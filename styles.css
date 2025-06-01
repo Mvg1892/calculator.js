@@ -1,0 +1,116 @@
+:root {
+    --columns: 6;
+    --button-width: 81px;
+    --gap: 1px;
+    --square-dimensions: 80px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(24, 190, 205);
+    color: #333;
+    box-sizing: border-box; /* Globale Einstellung für das Box-Modell */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /* Vererben des Box-Modells an alle Elemente */
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif; /* Schriftart festlegen */
+    font-size: 3.5em;
+    color: #333333;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+
+#calculator {
+    border: 5px solid grey;
+    max-width: calc(var(--columns) * var(--button-width) + 9px);
+    margin-left: 25px;
+    margin-right: 25px;
+    overflow: hidden;
+}
+
+#calculator-output {
+    width: calc(var(--columns) * var(--button-width) - 1px);
+    height: calc(var(--square-dimensions) - 10px);
+    border-bottom: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 40px;
+    display: flex; /* Flexbox aktivieren */
+    align-items: flex-end; /* Text an den unteren Rand ausrichten */
+    padding: 0 4px; /* Optional: Kleiner Innenabstand */
+}
+
+#calculator-inputs {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, 50px);  Spalten mit fester Breite
+    grid-auto-flow: column;  Elemente füllen Spalten statt Zeilen 
+    grid-template-rows: repeat(4, 50px);  4 Zeilen mit fester Höhe */
+    grid-template-columns: repeat(var(--columns), var(--square-dimensions));
+    grid-auto-flow: row; /* Zeilenweise Füllung */
+    gap: var(--gap);  /* Abstand zwischen den Buttons */
+    background-color: #0400ff; /* Farbe der Trennlinie */
+}
+
+.number {
+    background-color: #333333;
+    color: antiquewhite;
+    border: 1px solid antiquewhite;
+    width: var(--square-dimensions); /* Feste Breite */
+    height: var(--square-dimensions); /* Feste Höhe */
+    font-size: 35px; /* Kleinere Schriftgröße für bessere Passform */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Zentriert den Text */
+}
+
+.number:hover {
+    /* background-color: #707070; */
+    background-color: #5b5b5b;
+    font-weight: bold;   
+}
+
+.action {
+    background-color: #333333;
+    color: antiquewhite;
+    border: 1px solid antiquewhite;
+    width: var(--square-dimensions); /* Feste Breite */
+    height: var(--square-dimensions); /* Feste Höhe */
+    font-size: 30px; /* Kleinere Schriftgröße für bessere Passform */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Zentriert den Text */
+}
+
+.action:hover {
+    /* background-color: #707070; */
+    background-color: #5b5b5b;
+    font-weight: bold;   
+}
+
+.footer {
+    background-color: #333; /* Hintergrundfarbe des Footers */
+    text-align: center;
+    padding: 25px 0;
+    position:absolute;
+    bottom: 0; /* Verschiebt den Footer zum unteren Rand */
+    width: 100%; /* Footer nimmt die volle Breite ein */
+}
+
+.footer p {
+    margin: 0; /* Entfernt den Standardabstand des <p>-Tags */
+    color: #fff; /* Schriftfarbe explizit auf weiß setzen */
+}
+
+@media (max-width: 400px) {
+    
+}
